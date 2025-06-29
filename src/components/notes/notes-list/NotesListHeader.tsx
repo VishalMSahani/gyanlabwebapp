@@ -21,7 +21,7 @@ const NotesListHeader = ({
   return (
     <>
       {/* Breadcrumb */}
-      <div className="flex items-center gap-2 mb-6 text-sm text-gray-600">
+      <div className="flex items-center mt-7 gap-2 mb-6 text-sm text-gray-600">
         <Link href="/notes" className="hover:text-gray-900">Notes</Link>
         <span>›</span>
         <Link href={`/notes/${standard}`} className="hover:text-gray-900">
@@ -32,8 +32,9 @@ const NotesListHeader = ({
       </div>
 
       {/* Header */}
-      <div className="flex items-center gap-4 mb-8">
+      <div className="flex items-center gap-4 mb-8 text-primary">
         <Link href={`/notes/${standard}`}>
+        
           <Button variant="outline" size="sm" className="flex items-center gap-2">
             <ArrowLeft size={16} />
             Back

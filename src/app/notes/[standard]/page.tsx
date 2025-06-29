@@ -42,7 +42,8 @@ const SubjectSelection = () => {
   const subjects = getSubjects(standard);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pt-16">
+
       <div className="max-w-4xl mx-auto px-4 py-8">
         <SubjectHeader standard={standard || ""} getClassTitle={getClassTitle} />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

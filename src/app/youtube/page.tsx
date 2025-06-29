@@ -3,7 +3,7 @@ import ChannelStats from "@/components/youtube/ChannelStats";
 import FeaturedVideos from "@/components/youtube/FeaturedVideos";
 import PlaylistsSection from "@/components/youtube/PlaylistsSection";
 import YouTubeBenefits from "@/components/youtube/YouTubeBenefits";
-import YouTubeCTA from "@/components/youtube/YouTubeCTA";
+// import YouTubeCTA from "@/components/youtube/YouTubeCTA";
 
 export default function YouTube() {
   return (
@@ -13,7 +13,7 @@ export default function YouTube() {
       <FeaturedVideos />
       <PlaylistsSection />
       <YouTubeBenefits />
-      <YouTubeCTA />
+      {/* <YouTubeCTA /> */}
     </div>
   );
 }

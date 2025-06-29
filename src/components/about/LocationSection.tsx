@@ -7,34 +7,32 @@ const LocationSection = () => {
     {
       icon: MapPin,
       title: "Address",
-      details: ["123 Main Street, Wadala", "Mumbai - 400037, Maharashtra"],
+      details: ["Shop No 23, Ganesh Nagar, Siddhivinayak Tower, Salt Pan Rd, R J Gaikwad Wadala East, Wadala, Mumbai, Maharashtra 400037"],
       color: "bg-primary/10 text-primary"
     },
     {
       icon: Phone,
       title: "Phone",
-      details: ["+91 98765 43210", "+91 98765 43211"],
+      details: ["091678 23177"],
       color: "bg-secondary/10 text-secondary"
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["info@gyanlab.com", "admissions@gyanlab.com"],
+      details: ["contactgyanlab@gmail.com"],
       color: "bg-primary/10 text-primary"
     },
     {
       icon: Clock,
       title: "Hours",
-      details: ["Mon - Sat: 8:00 AM - 8:00 PM", "Sunday: 9:00 AM - 6:00 PM"],
+      details: ["Mon - Sat: 7:00 AM - 10:00 PM", "Sunday: 9:00 AM - 6:00 PM"],
       color: "bg-secondary/10 text-secondary"
     }
   ];
 
   const nearbyLandmarks = [
     "Wadala Railway Station (5 min walk)",
-    "Wadala Bus Depot (3 min walk)",
-    "Wadala Market (2 min walk)",
-    "Wadala Garden (7 min walk)"
+    "Ganesh Nagar Gate (1 min walk)",
   ];
 
   return (

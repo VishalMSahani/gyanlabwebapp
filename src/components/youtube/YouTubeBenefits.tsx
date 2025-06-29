@@ -26,7 +26,7 @@ const YouTubeBenefits = () => {
   ];
 
   return (
-    <section className="py-16 bg-primary">
+    <section className="py-16 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-white mb-4">Why Learn from Our YouTube Channel?</h2>
@@ -35,7 +35,7 @@ const YouTubeBenefits = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
             <div key={index} className="text-center text-white">
-              <div className="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 {benefit.icon}
               </div>
               <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>

@@ -58,7 +58,7 @@ const NoteCard = ({ note, getTypeColor, handleDownload }: NoteCardProps) => {
               variant="outline"
               size="sm"
               className="flex items-center gap-2 flex-1 sm:flex-none"
-              onClick={() => handlePreview(note.title)}
+              // onClick={() => handlePreview(note.title)}
             >
               <Eye size={16} />
               Preview

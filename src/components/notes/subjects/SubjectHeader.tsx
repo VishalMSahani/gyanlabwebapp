@@ -10,7 +10,7 @@ interface SubjectHeaderProps {
 
 const SubjectHeader = ({ standard, getClassTitle }: SubjectHeaderProps) => {
   return (
-    <div className="flex items-center gap-4 mb-8">
+    <div className="flex items-center gap-4 mb-8 mt-6 text-primary">
       <Link href="/notes">
         <Button variant="outline" size="sm" className="flex items-center gap-2">
           <ArrowLeft size={16} />

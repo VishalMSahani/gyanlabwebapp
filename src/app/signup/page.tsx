@@ -1,10 +1,11 @@
 "use client"
 import { useState } from "react";
 import Link from "next/link";
-import { Mail, Lock, User, Eye, EyeOff, ArrowRight, GraduationCap, Phone } from "lucide-react";
+import { Mail, Lock, User, Eye, EyeOff, ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Image from "next/image";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -24,13 +25,18 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-light via-primary/5 to-secondary/5 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-light via-primary/5 to-secondary/5 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 pt-28">
       <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-      <div className="max-w-md w-full space-y-8 relative z-10">
+      <div className="max-w-md w-full space-y-8 relative z-10 text-primary/80">
         <div className="text-center">
           <Link href="/" className="inline-flex items-center space-x-2 mb-8">
-            <div className="bg-primary p-2 rounded-lg">
-              <GraduationCap className="h-8 w-8 text-white" />
+          <div className="bg-primary p-[0.5px] rounded-full">
+              <Image
+              width={50}
+              height={50}
+              alt="Logo Gyanlab"
+              src="/logo_gyanlab.svg"
+              />
             </div>
             <div className="text-left">
               <h1 className="text-xl font-bold text-primary">Gyanlab Tutorial</h1>
