@@ -6,6 +6,7 @@ import NoteCard from "@/components/notes/notes-list/NoteCard";
 import NotesListHeader from "@/components/notes/notes-list/NotesListHeader";
 import DownloadInfo from "@/components/notes/notes-list/DownloadInfo";
 import {toast} from "sonner"
+import type { DriveFile } from "@/lib/types/googleDrive";
 
 interface Note {
   id: string;
@@ -68,7 +69,7 @@ const NotesList = () => {
       })
       .then((data) => {
         // Map Google Drive files to NoteCard format
-        const notes = (data.files || []).map((file: any) => ({
+        const notes = (data.files || []).map((file: DriveFile) => ({
           id: file.id,
           title: file.name.replace(/\.pdf$/i, ""),
           description: "PDF Study Material", // You can enhance this if you store descriptions

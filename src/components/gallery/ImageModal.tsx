@@ -1,4 +1,4 @@
-
+import Image from "next/image";
 import { X } from "lucide-react";
 
 interface ImageModalProps {
@@ -18,9 +18,11 @@ const ImageModal = ({ selectedImage, onClose }: ImageModalProps) => {
         >
           <X className="h-8 w-8" />
         </button>
-        <img
+        <Image
           src={selectedImage}
           alt="Gallery image"
+          width={800}
+          height={600}
           className="max-w-full max-h-full object-contain rounded-lg"
         />
       </div>

@@ -65,7 +65,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const files = await getFilesInFolder(subjFolder.id);
     const pdfFiles = files.filter((f: DriveFile) => f.name.toLowerCase().endsWith(".pdf"));
     return res.status(200).json({ files: pdfFiles });
-  } catch (err: any) {
-    return res.status(500).json({ error: err.message || "Internal server error" });
+  } catch (err: unknown) {
+    let message = "Internal server error";
+    if (err instanceof Error) {
+      message = err.message;
+    }
+    return res.status(500).json({ error: message });
   }
 } 
