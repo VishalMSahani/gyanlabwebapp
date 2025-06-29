@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Trophy, Star, Award } from 'lucide-react';
+import {Star, Award } from 'lucide-react';
 
 interface Topper {
   name: string;
@@ -33,50 +33,49 @@ const toppers: Topper[] = [
 const TopperCard = ({ topper }: { topper: Topper }) => {
   return (
     <motion.div 
-      className="flex-shrink-0 w-[200px] bg-white rounded-2xl shadow-lg p-6 mx-3 flex flex-col items-center text-center relative overflow-hidden border border-border/50 hover:shadow-2xl transition-all duration-300 group"
+      className="flex-shrink-0 w-[200px] bg-white rounded-2xl border border-secondary/30
+      shadow-lg p-6 mx-3 flex flex-col items-center text-center relative overflow-hidden hover:shadow-2xl transition-all duration-300 group"
       whileHover={{ y: -8, scale: 1.02 }}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-16 h-16 bg-secondary/5 rounded-full -translate-y-8 translate-x-8 group-hover:scale-150 transition-transform duration-500"></div>
+      <div className="absolute top-0 
+      right-0 w-16 h-16 bg-secondary/5 rounded-full -translate-y-8 translate-x-8 group-hover:scale-150 transition-transform duration-500"></div>
       
-      <div className="relative z-10">
-        <div className="relative w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-secondary/20 flex-shrink-0 shadow-lg group-hover:border-secondary/40 transition-colors duration-300">
+      <div className="relative z-10 flex flex-col items-center">
+        <div className="relative w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-secondary/20 flex-shrink-0 shadow-lg group-hover:border-secondary/40 transition-colors duration-300 flex items-center justify-center">
           <Image
             src={topper.image}
             alt={topper.name}
             fill
             className="object-cover"
           />
-          {/* Percentage badge */}
-          <div className="absolute -top-2 -right-2 w-8 h-8 bg-secondary rounded-full flex items-center justify-center shadow-lg">
-            <span className="text-xs font-bold text-white">{topper.percentage}%</span>
-          </div>
         </div>
-        
-        <div className="space-y-2">
-          <h3 className="text-lg font-bold text-primary leading-tight">{topper.name}</h3>
-          <div className="flex items-center justify-center space-x-1">
-            <Trophy className="h-4 w-4 text-yellow-500" />
-            <p className="text-sm font-semibold text-secondary">{topper.standard}</p>
-          </div>
-          
-          {(topper.school || topper.college) && (
-            <p className="text-xs text-muted-foreground italic leading-tight">{topper.school || topper.college}</p>
-          )}
-          
-          {topper.rankNote && (
-            <motion.div 
-              className="inline-flex items-center text-xs text-secondary font-semibold bg-secondary/10 rounded-full px-3 py-1 mt-2 shadow-sm"
-              whileHover={{ scale: 1.05 }}
-            >
-              <Star className="h-3 w-3 mr-1" />
-              {topper.rankNote}
-            </motion.div>
-          )}
+        {/* Percentage badge before name */}
+        <div className="flex flex-col items-center justify-center mb-1">
+          <span className="inline-block bg-secondary text-white text-sm font-bold rounded-full px-2 py-1 mr-2">{topper.percentage}%</span>
+          <h3 className="text-lg font-bold text-primary leading-tight mt-2">{topper.name}</h3>
         </div>
+        {/* Standard */}
+        <div className="flex items-center justify-center space-x-1 mt-1">
+          <p className="text-sm font-semibold text-primary/40">{topper.standard}</p>
+        </div>
+        {/* College/School */}
+        {(topper.college || topper.school) && (
+          <p className="text-xs text-muted-foreground italic leading-tight mt-1">{topper.college || topper.school}</p>
+        )}
+        {/* Rank Note if available */}
+        {topper.rankNote && (
+          <motion.div 
+            className="inline-flex items-center text-xs text-secondary font-semibold bg-secondary/10 rounded-full px-3 py-1 mt-2 shadow-sm"
+            whileHover={{ scale: 1.05 }}
+          >
+            <Star className="h-3 w-3 mr-1" />
+            {topper.rankNote}
+          </motion.div>
+        )}
       </div>
     </motion.div>
   );
@@ -156,23 +155,6 @@ const ToppersSection = () => {
             ))}
           </motion.div>
         </div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="bg-primary text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            Join Our Success Story
-          </motion.button>
-        </motion.div>
       </div>
     </section>
   );
