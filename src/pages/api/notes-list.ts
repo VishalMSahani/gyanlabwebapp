@@ -3,7 +3,7 @@ import getFilesInFolder, { getSubfolders } from "./drive";
 import type { DriveFile } from "@/lib/types/googleDrive";
 
 // Main Notes folder ID
-const MAIN_NOTES_FOLDER_ID = "1dZ8dAtcheiPCrL0ZJL75kpvrS8MJTctD";
+const MAIN_NOTES_FOLDER_ID = "1rLhwKohB23Lj5pIvirw3CgIlygxPXk44";
 
 // Map standards and subjects to folder names as in Google Drive
 const STANDARD_MAP: Record<string, string> = {
@@ -32,6 +32,7 @@ const SUBJECT_MAP: Record<string, Record<string, string>> = {
     mathematics: "Mathematics",
     history: "History",
     geography: "Geography",
+    civics: "Civics",
   },
 };
 
